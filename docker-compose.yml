@@ -26,10 +26,30 @@ services:
     restart: always
     ports:
       - 81:80
-    environment: 
+    environment:
       - "PMA_HOST:mysql"
       - "PMA_USER:root"
       - "PMA_PASSWORD:123456"
 
+####  Dùng cho laravel #####
+### Dùng với Dockerfile
+# version: '3'
+# services:
+#   web:
+#       build: .
+#       ports:
+#           - 80:80
+#       volumes:
+#         - ".:/var/www/html"
 
-    
+### Dùng với file conf trong apache
+### kết hợp file 000-default.conf cùng cấp file docker-compose.yml
+# version: '3'
+# services:
+#   web:
+#       build: .
+#       ports:
+#           - 80:80
+#       volumes:
+#         - ".:/var/www/html"
+#         - "./000-default.conf:/etc/apache2/sites-enabled/000-default.conf"
