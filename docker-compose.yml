@@ -30,7 +30,7 @@ services:
     environment:
       - "PMA_HOST:mysql"
       - "PMA_USER:root"
-      - "PMA_PASSWORD:123456"
+      - "PMA_ARBITRARY:1"
 
 ####  Dùng cho laravel #####
 ### Dùng với Dockerfile
@@ -47,11 +47,13 @@ services:
 ### kết hợp file 000-default.conf cùng cấp file docker-compose.yml
 # version: '3'
 # services:
-#   web:
+#  app:
 #     container_name: php7
 #     image: php:7.1-apache
-#     ports:
-#       - 80:80
 #     volumes:
 #       - ".:/var/www/html"
 #       - "./000-default.conf:/etc/apache2/sites-enabled/000-default.conf"
+#     ports:
+#       - 80:80
+#     restart: always
+
