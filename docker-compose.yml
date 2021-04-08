@@ -6,6 +6,7 @@ services:
     image: php:7.1-apache
     volumes:
       - ".:/var/www/html"
+      - "./000-default.conf:/etc/apache2/sites-enabled/000-default.conf"
     ports:
       - 80:80
     restart: always
@@ -47,9 +48,10 @@ services:
 # version: '3'
 # services:
 #   web:
-#       build: .
-#       ports:
-#           - 80:80
-#       volumes:
-#         - ".:/var/www/html"
-#         - "./000-default.conf:/etc/apache2/sites-enabled/000-default.conf"
+#     container_name: php7
+#     image: php:7.1-apache
+#     ports:
+#       - 80:80
+#     volumes:
+#       - ".:/var/www/html"
+#       - "./000-default.conf:/etc/apache2/sites-enabled/000-default.conf"
