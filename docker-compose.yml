@@ -29,7 +29,7 @@ services:
     environment:
       - "PMA_HOST:mysql"
       - "PMA_USER:root"
-      - "PMA_PASSWORD:123456"
+      - "PMA_ARBITRARY:1"
 
 ####  Dùng cho laravel #####
 ### Dùng với Dockerfile
